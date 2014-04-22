@@ -1,0 +1,9 @@
+<% if @posts.any? %>
+	<% @posts.each do |post| %>
+		<%= post.title %>
+		<%= post.description %>
+		<%= post.url %>
+	<% end %>
+<% else %>
+	No posts yet
+<% end %>
