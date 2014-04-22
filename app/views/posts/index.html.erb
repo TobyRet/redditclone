@@ -1,8 +1,10 @@
 <% if @posts.any? %>
 	<% @posts.each do |post| %>
-		<%= post.title %>
-		<%= post.description %>
-		<%= post.url %>
+		<h3><%= link_to post.title, post.url %></h3>
+		<h2 class = 'votes_count'><%= post.votes_count %></h2>
+		<p><%= button_to 'Upvote', post_votes_path(post, direction: :up) %></p>
+		<p><%= button_to 'Downvote', post_votes_path(post, direction: :down) %></p>
+		<p><%= post.description %></p>
 	<% end %>
 <% else %>
 	No posts yet

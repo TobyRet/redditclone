@@ -22,7 +22,7 @@ describe 'posts index page' do
     end
 
     context 'invalid post' do
-      xit 'shows an error' do
+      it 'shows an error' do
         visit '/posts/new'
         click_button 'Submit'
 
