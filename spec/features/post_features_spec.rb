@@ -10,6 +10,10 @@ describe 'posts index page' do
   end
 
   describe 'adding posts' do
+    before do
+      login_as create(:toby)
+    end
+    
     context 'valid post' do
       it 'is added to the posts page' do
         visit '/posts/new'
