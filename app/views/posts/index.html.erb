@@ -2,7 +2,7 @@
 	<% @posts.each do |post| %>
 		<div class = 'post'>
 			<h3><%= link_to post.title, post.url %></h3>
-			<h2 class = 'votes_count'><%= post.votes_count %></h2>
+			<h2 class='votes_count'><%= post.votes_count %></h2>
 			<p><%= button_to 'Upvote', post_votes_path(post, direction: :up), class: 'vote_button btn btn-success' %></p>
 			<p><%= button_to 'Downvote', post_votes_path(post, direction: :down), class: 'vote_button btn btn-danger' %></p>
 			<p><%= post.description %></p>

@@ -26,7 +26,7 @@ describe 'posts index page' do
         visit '/posts/new'
         click_button 'Submit'
 
-        expect(page).to have_content 'error'
+        expect(page).to have_css '.has-error'
       end
     end
   end
