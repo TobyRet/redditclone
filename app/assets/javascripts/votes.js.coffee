@@ -7,8 +7,6 @@ $(document).ready ->
 		event.preventDefault()
 		url = $(this).closest('form').attr('action')
 		votesCount = $(this).closest('.post').find('.votes_count')
-		# alert(votesCount)
-		# console.log(votesCount.html)
 
 		$.post url, (post) ->
 			votesCount.html(post.vote_count)

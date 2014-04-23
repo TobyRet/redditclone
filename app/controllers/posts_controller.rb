@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @posts = Post.all
   end
@@ -10,6 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new params[:post].permit(:title, :description, :url)
+    @vote.user = current_user
     
     if @post.save
       redirect_to '/posts'
