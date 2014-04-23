@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
 
   def votes_count
-    votes.up.count - votes.down.count
+    votes.recent.up.count - votes.recent.down.count
   end
 
 end

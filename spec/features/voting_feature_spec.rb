@@ -5,7 +5,7 @@ describe 'voting for posts' do
   before { create(:post) }
 
   describe 'upvoting' do
-    it 'adds points' do
+    it 'adds points', js: true do
       visit '/posts'
       click_button 'Upvote'
       expect(page).to have_css('.votes_count', text: '1')
@@ -13,7 +13,7 @@ describe 'voting for posts' do
   end
 
   describe 'downvoting' do
-    it 'subtracts points' do
+    it 'subtracts points', js: true do
       visit '/posts'
       click_button 'Downvote'
       expect(page).to have_css('.votes_count', text: '-1')
